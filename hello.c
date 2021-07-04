@@ -4,7 +4,7 @@
 #define nv 20
 #define nc 5
 
-void main()
+void amain()
 { 
     int v_datos [nv];
     int v_coef [nc];
