@@ -1,22 +1,22 @@
 
-XOPTS = -I"C:/ti/xdctools_3_25_03_72/packages/" -Dxdc_target_types__=C:/ti/xdctools_3_25_03_72/packages/ti/targets/std.h -Dxdc_target_name__=C64P
+XOPTS = -I"D:/CCS/xdctools_3_25_03_72/packages/" -Dxdc_target_types__=D:/CCS/xdctools_3_25_03_72/packages/ti/targets/std.h -Dxdc_target_name__=C64P
 
-vpath % C:/ti/bios_6_35_04_50/packages/ti/sysbios/
-vpath %.c C:/ti/xdctools_3_25_03_72/packages/
+vpath % D:/CCS/bios_6_35_04_50/packages/ti/sysbios/
+vpath %.c D:/CCS/xdctools_3_25_03_72/packages/
 
 CCOPTS    = -mv64p -q -mi10 -mo -pdr -pden -pds=238 -pds=880 -pds1110  --program_level_compile -o3 -g --optimize_with_debug 
 
-XDC_ROOT  = C:/ti/xdctools_3_25_03_72/packages/
+XDC_ROOT  = D:/CCS/xdctools_3_25_03_72/packages/
 
-BIOS_ROOT = C:/ti/bios_6_35_04_50/packages/ti/sysbios/
+BIOS_ROOT = D:/CCS/bios_6_35_04_50/packages/ti/sysbios/
 
 BIOS_DEFS =  -Dti_sysbios_BIOS_swiEnabled__D=TRUE -Dti_sysbios_BIOS_taskEnabled__D=TRUE -Dti_sysbios_BIOS_clockEnabled__D=TRUE -Dti_sysbios_hal_Hwi_DISABLE_ALL_HOOKS -Dti_sysbios_knl_Swi_DISABLE_ALL_HOOKS -Dti_sysbios_BIOS_smpEnabled__D=FALSE -Dti_sysbios_Build_useHwiMacros -Dti_sysbios_knl_Swi_numPriorities__D=16 -Dti_sysbios_knl_Task_deleteTerminatedTasks__D=FALSE -Dti_sysbios_knl_Task_numPriorities__D=16 -Dti_sysbios_knl_Clock_TICK_SOURCE=ti_sysbios_knl_Clock_TickSource_TIMER -Dti_sysbios_knl_Clock_TICK_MODE=ti_sysbios_knl_Clock_TickMode_PERIODIC -Dti_sysbios_utils_Load_taskEnabled__D=TRUE -Dti_sysbios_utils_Load_swiEnabled__D=FALSE -Dti_sysbios_family_c64p_Hwi_dispatcherSwiSupport__D=TRUE -Dti_sysbios_family_c64p_Hwi_dispatcherTaskSupport__D=TRUE -Dti_sysbios_family_c64p_Hwi_dispatcherAutoNestingSupport__D=TRUE -Dti_sysbios_family_c64p_Hwi_dispatcherIrpTrackingSupport__D=TRUE -Dti_sysbios_knl_Semaphore_supportsEvents__D=FALSE -Dti_sysbios_family_c64p_Exception_enableExternalMPC__D=FALSE -Dti_sysbios_family_c64p_Exception_enablePrint__D=TRUE
 
-BIOS_INC  = -I"C:/ti/bios_6_35_04_50/packages/"
+BIOS_INC  = -I"D:/CCS/bios_6_35_04_50/packages/"
 
-CC = C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x -c $(CCOPTS) -I C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include
-ASM = C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x -c $(CCOPTS) -I C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include
-AR = C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/ar6x rq
+CC = D:/CCS/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x -c $(CCOPTS) -I D:/CCS/ccsv5/tools/compiler/c6000_7.4.4/include
+ASM = D:/CCS/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x -c $(CCOPTS) -I D:/CCS/ccsv5/tools/compiler/c6000_7.4.4/include
+AR = D:/CCS/ccsv5/tools/compiler/c6000_7.4.4/bin/ar6x rq
 
 DEL = cmd.exe /q /c del /f
 CP = cmd.exe /q /c copy /Y
