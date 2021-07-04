@@ -1,6 +1,6 @@
 #
 # This file was generated based on the configuration script:
-#     N:\workspace-ccs\basico_main\hello.cfg
+#     C:\Users\DarkWayC0de\Desktop\ULL\Arquitectura\proyecto_base\Proyecto_base\hello.cfg
 #
 # This makefile may be included in other makefiles that need to build
 # the libraries containing the compiled source files generated as
@@ -14,7 +14,7 @@
 #
 # The absolute path to the generated source directory (at the time the
 # sources were generated) is:
-#    N:\workspace-ccs\basico_main\src
+#    C:\Users\DarkWayC0de\Desktop\ULL\Arquitectura\proyecto_base\Proyecto_base\src
 #
 GEN_SRC_DIR ?= ../src
 
