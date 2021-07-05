@@ -1,10 +1,11 @@
 #include <cstdio>
 
-#define NV 7000
-#define NC 25
+#define NV 7000  	//Numero de datos de entrada
+#define NC 25	 	//Numero de coeficientes
 
-#define BLOQUE 10
+#define BLOQUE 10	//Numero de Bloques para el desenrollado
 
+// Funcion para lectura de .csv
 int readdata(FILE *file,int ini, int size, float *v_data){
 	int i = ini;
 	int a = 0;
@@ -17,6 +18,7 @@ int readdata(FILE *file,int ini, int size, float *v_data){
     }
     return 0;
 }
+//Funcion para la escritura en .csv con el mismo formato dado
 void writedata(FILE *file,int ini, int size, float *v){
 	int i = ini;
     while ( i < size){
@@ -29,6 +31,7 @@ void writedata(FILE *file,int ini, int size, float *v){
 	   	i++;
 	}
 }
+//Funcion para el filtrado de vector de datos a partir de un vector de coeficientes
 void filterfir(float* v_coef, int sz_coef, float* v_data, float* v_result){
 	int i = 0;
 	for(i = 0; i < sz_coef ; i++){
@@ -36,7 +39,7 @@ void filterfir(float* v_coef, int sz_coef, float* v_data, float* v_result){
 		int iteraciones = (sz_coef/BLOQUE);
 		int resto = (sz_coef%BLOQUE);
 		while(iteraciones-- > 0){
-			v_result[i] += v_data[indice+10+i] * v_coef[indice+10 -1];
+			v_result[i] += v_data[indice+10+i]*v_coef[indice+10 -1];
 			v_result[i] += v_data[indice+9+i] * v_coef[indice+9 -1];
 			v_result[i] += v_data[indice+8+i] * v_coef[indice+8 -1];
 			v_result[i] += v_data[indice+7+i] * v_coef[indice+7 -1];
@@ -62,13 +65,14 @@ void filterfir(float* v_coef, int sz_coef, float* v_data, float* v_result){
 		}
 	}
 }
+//Funcion para dar valor 0 a parte selecionada de un vector
 void v_0(float *v,int ini, int sz){
 	int i = ini;
     for(; i<sz;i++){
 	   	v[i] = 0;
 	}
 }
-
+// Funcion que mueve la mitad superior de un vector a la mitad inferior
 void mv_data(float *v, int mnc){
 	int i = 0;
 	for(i = 0; i < mnc; i++){
@@ -108,7 +112,6 @@ int main()
 	    	return 4;
 	    }
 	    int valores_restantes = NV-NC;
-
 	    do {
 			v_0(v_resul,0,NC);
 			filterfir(v_coef,NC,v_datos,v_resul);
